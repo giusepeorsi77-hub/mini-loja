@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelZone Games</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header id="cabecalho">
+        <div class="conteudo">
+            <a href="#" class="marca">
+                <img src="img/logo.svg" alt="PixelZone">
+                <span>Pixel<b>Zone</b></span>
+            </a>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#loja">Loja</a></li>
+                    <li><a href="#plataformas">Plataformas</a></li>
+                    <li><a href="#cadastro">Cadastro</a></li>
+                    <li><a href="#carrinho" class="link-carrinho">Carrinho (<span id="contador">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="destaque">
+        <div class="conteudo">
+            <img src="img/galaxia.svg" alt="Galáxia X" class="img-destaque">
+            <div class="texto-destaque">
+                <span class="selo">Lançamento</span>
+                <h1>Galáxia X</h1>
+                <p>Explore planetas, monte sua nave e enfrente piratas espaciais.</p>
+                <button class="btn" onclick="adicionar(4)">Comprar agora</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="conteudo">
+
+        <section id="loja">
+            <h2 class="titulo-secao">Jogos</h2>
+            <div class="filtros">
+                <button class="filtro ativo" data-cat="todos">Todos</button>
+                <button class="filtro" data-cat="acao">Ação</button>
+                <button class="filtro" data-cat="corrida">Corrida</button>
+                <button class="filtro" data-cat="esporte">Esporte</button>
+                <button class="filtro" data-cat="casual">Casual</button>
+            </div>
+            <div id="vitrine"></div>
+        </section>
+
+        <section id="carrinho">
+            <h2 class="titulo-secao">Carrinho</h2>
+            <div class="caixa-carrinho">
+                <table id="tabela-carrinho">
+                    <thead>
+                        <tr>
+                            <th>Jogo</th>
+                            <th>Preço</th>
+                            <th>Qtd</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="itens"></tbody>
+                </table>
+                <p id="vazio">Nenhum jogo no carrinho.</p>
+
+                <div class="resumo">
+                    <div class="cupom">
+                        <input type="text" id="campo-cupom" placeholder="Cupom">
+                        <button class="btn btn-pequeno" id="btn-cupom">Usar</button>
+                    </div>
+                    <p id="aviso-cupom"></p>
+                    <p>Subtotal <span id="valor-subtotal">R$ 0,00</span></p>
+                    <p>Desconto <span id="valor-desconto">R$ 0,00</span></p>
+                    <p class="linha-total">Total <span id="valor-total">R$ 0,00</span></p>
+                    <button class="btn btn-comprar" id="btn-comprar">Comprar</button>
+                    <p id="aviso-compra"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="plataformas">
+            <h2 class="titulo-secao">Plataformas</h2>
+            <table class="tabela-info">
+                <tr>
+                    <th>Plataforma</th>
+                    <th>Entrega</th>
+                    <th>Formato</th>
+                </tr>
+                <tr>
+                    <td>PC</td>
+                    <td>Imediata</td>
+                    <td>Chave digital</td>
+                </tr>
+                <tr>
+                    <td>PlayStation</td>
+                    <td>Imediata</td>
+                    <td>Código PSN</td>
+                </tr>
+                <tr>
+                    <td>Xbox</td>
+                    <td>Imediata</td>
+                    <td>Código Xbox</td>
+                </tr>
+                <tr>
+                    <td>Nintendo Switch</td>
+                    <td>Até 1 hora</td>
+                    <td>Código eShop</td>
+                </tr>
+            </table>
+
+            <div class="passos">
+                <h3>Como resgatar seu jogo</h3>
+                <ol>
+                    <li>Finalize a compra</li>
+                    <li>Copie o código que aparece na tela</li>
+                    <li>Abra a loja da sua plataforma</li>
+                    <li>Cole o código em "Resgatar"</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="cadastro">
+            <h2 class="titulo-secao">Receba promoções</h2>
+            <form id="form-cadastro">
+                <div class="campo">
+                    <label for="usuario">Nome de usuário</label>
+                    <input type="text" id="usuario">
+                </div>
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="campo">
+                    <label for="idade">Idade</label>
+                    <input type="number" id="idade" min="1" max="120">
+                </div>
+                <div class="campo">
+                    <label for="plataforma">Plataforma favorita</label>
+                    <select id="plataforma">
+                        <option value="">Selecione</option>
+                        <option>PC</option>
+                        <option>PlayStation</option>
+                        <option>Xbox</option>
+                        <option>Nintendo Switch</option>
+                    </select>
+                </div>
+                <label class="check"><input type="checkbox" id="aceito"> Aceito receber e-mails</label>
+                <button type="submit" class="btn">Cadastrar</button>
+                <p id="aviso-form"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <footer id="rodape">
+        <div class="conteudo">
+            <p>PixelZone Games &copy; 2026</p>
+            <ul class="links-rodape">
+                <li><a href="https://store.steampowered.com" target="_blank">Steam</a></li>
+                <li><a href="https://store.playstation.com" target="_blank">PlayStation Store</a></li>
+                <li><a href="https://www.xbox.com" target="_blank">Xbox</a></li>
+                <li><a href="#cabecalho">Topo</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
